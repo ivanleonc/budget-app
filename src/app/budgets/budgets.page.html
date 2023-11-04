@@ -1,23 +1,37 @@
+<ion-menu side="end" menuId="custom" contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Opciones</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item (click)="generateAndDownloadPDFAll()">
+        <ion-icon name="download" slot="start"></ion-icon>
+        <ion-label>Generar presupuesto</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+ <!-- Botón flotante para agregar presupuesto -->
+ <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button routerLink="/tabs/newbudget">
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>Presupuesto</ion-title>
-    <ion-buttons slot="end">
-      <ion-button (click)="generateAndDownloadPDFAll()" style="--background: green; margin-right: 16px;">
-        <ion-icon name="calculator-outline" slot="start"></ion-icon>
-        Generar presupuesto
-      </ion-button>
+    <ion-buttons slot="end"> <!-- Cambiado de "start" a "end" -->
+      <ion-menu-button autoHide="false" menu="custom">
+        <ion-icon name="menu"></ion-icon>
+      </ion-menu-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" class="ion-padding">
-
-  <!-- Botón flotante para agregar presupuesto -->
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button routerLink="/tabs/newbudget">
-      <ion-icon name="add"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
+<ion-content [fullscreen]="true" class="ion-padding" id="main-content">
 
   <!-- Lista de presupuestos -->
   <ion-list>

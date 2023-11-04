@@ -1,44 +1,42 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+    <!-- <ion-buttons slot="start">
+      <ion-back-button defaultHref="/inicio"></ion-back-button>
+    </ion-buttons> -->
     <ion-title>
-      Inicio
+      Detalles de la Aplicación
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Inicio</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <!-- Tarjetas de contenido de marcador de posición -->
-  <ion-card>
+  <ion-card class="app-details-card">
     <ion-card-header>
-      <ion-card-title>Elemento 1</ion-card-title>
+      <ion-card-title>
+        <ion-icon name="apps" slot="start"></ion-icon>
+        <span class="app-name">Budget App</span>
+      </ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      Contenido de ejemplo para el elemento 1.
+      <ion-list>
+        <ion-item>
+          <ion-label>Desarrolladores</ion-label>
+          <ion-note slot="end" style="font-size: .8em;">
+            <div>Ivan Ramiro Leon Capote</div>
+            <div>Valentina Burbano</div>
+            <div>Jesus David Sarria</div>
+          </ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-label>Versión</ion-label>
+          <ion-note slot="end" style="font-size: .8em;">1.0.0</ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-label>Descripción</ion-label>
+          <ion-note slot="end" style="font-size: .8em;">Una aplicación increíble para gestionar tu presupuesto.</ion-note>
+        </ion-item>
+        <!-- Puedes agregar más detalles según sea necesario -->
+      </ion-list>
     </ion-card-content>
   </ion-card>
-
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Elemento 2</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      Contenido de ejemplo para el elemento 2.
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Elemento 3</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      Contenido de ejemplo para el elemento 3.
-    </ion-card-content>
-  </ion-card>
-
 </ion-content>
