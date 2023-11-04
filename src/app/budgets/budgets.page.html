@@ -1,6 +1,12 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>Presupuesto</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="generateAndDownloadPDFAll()" style="--background: green; margin-right: 16px;">
+        <ion-icon name="calculator-outline" slot="start"></ion-icon>
+        Generar presupuesto
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -33,6 +39,8 @@
         </p>
       </ion-label>
       <ion-icon name="arrow-forward" slot="end"></ion-icon>
+      <!-- <ion-button (click)="generateAndDownloadPDFOne(budgetItem)" style="--background: rgb(0, 41, 128);">
+        <ion-icon name="download-outline" slot="start"></ion-icon></ion-button> -->
     </ion-item>
   </ion-list>
 
