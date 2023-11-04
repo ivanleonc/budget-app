@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Presupuesto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+  <!-- Botón flotante para agregar presupuesto -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button routerLink="/tabs/newbudget">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <!-- Lista de presupuestos -->
+  <ion-list>
+    <ion-item *ngFor="let budgetItem of budgets$" (click)="selectBudget(budgetItem.id)">
+      <ion-icon name="pricetag-outline" slot="start"></ion-icon>
+      <ion-label>
+        <h1>{{ budgetItem.name_product }}</h1>
+        <p>
+          <ion-icon name="cash-outline"></ion-icon>
+          {{ budgetItem.product_value | currency: 'USD':'symbol' }}
+        </p>
+        <p>
+          <ion-icon name="cube-outline"></ion-icon>
+          Cantidad: {{ budgetItem.product_quantity}}
+        </p>
+        <p>
+          <ion-icon name="bar-chart-outline"></ion-icon>
+          Peso: {{ budgetItem.product_weight}} g
+        </p>
+      </ion-label>
+      <ion-icon name="arrow-forward" slot="end"></ion-icon>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

@@ -1,0 +1,45 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Inciar Sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 50vh;">
+
+  <ion-title style="font-size: 1.5em; margin-bottom: 20px; text-align: center;">Budget App</ion-title>
+
+  <!-- Estilo para centrar la imagen sin el círculo -->
+  <div style="display: flex; align-items: center; justify-content: center; margin: 10px 10px;">
+    <ion-img src="./../../assets/icon-budget.png" style="width: 100px; height: 100px;"></ion-img>
+  </div>
+
+  <ion-list style="width: 100%;">
+    <ion-item lines="none">
+      <ion-icon name="mail" slot="start"></ion-icon>
+      <ion-label position="floating">Correo electrónico</ion-label>
+      <ion-input type="text" [(ngModel)]="user.email" required></ion-input>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-icon name="lock-closed" slot="start"></ion-icon>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input type="password" [(ngModel)]="user.password" required></ion-input>
+    </ion-item>
+  </ion-list>
+  
+  <div class="ion-padding" style="width: 100%; text-align: center;">
+
+    <ion-button expand="full" (click)="login(user)">
+      <ion-icon name="log-in" slot="start"></ion-icon>
+      Ingresar
+    </ion-button>
+    
+    <ion-button color="danger" expand="full" (click)="loginGoogleAuth()">
+      <ion-icon name="logo-google" slot="start"></ion-icon>
+      Ingresar con Google
+    </ion-button>
+    
+    <div style="margin-top: 10px;">
+      ¿Deseas registrarte? <a routerLink="/register" routerDirection="root">Registrarse</a>
+    </div>
+  </div>
+</ion-content>

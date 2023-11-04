@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/budgets" icon="arrow-back"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Modificar Presupuesto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" *ngIf="selected">
+  <form (ngSubmit)="editBudget()" #editBudgetForm="ngForm">
+    <ion-list>
+
+      <ion-item>
+        <ion-icon name="information-circle" slot="start"></ion-icon>
+        <ion-input label="ID:" type="number" name="id" [(ngModel)]="selected.id" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="pricetag" slot="start"></ion-icon>
+        <ion-input label="Nombre:" type="text"  name="name_product" [(ngModel)]="selected.name_product" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="cube" slot="start"></ion-icon>
+        <ion-input label="Cantidad:" type="number"  name="product_quantity" [(ngModel)]="selected.product_quantity" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="cash" slot="start"></ion-icon>
+        <ion-input label="Valor:" type="number"  name="product_value" [(ngModel)]="selected.product_value" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="barbell" slot="start"></ion-icon>
+        <ion-input label="Peso:" type="number"  name="product_weight" [(ngModel)]="selected.product_weight" required></ion-input>
+      </ion-item>
+
+    </ion-list>
+
+    <ion-button expand="full" class="ion-margin-horizontal" slot="primary" type="submit" [disabled]="!editBudgetForm.form.valid">
+      <ion-icon name="save-outline" slot="start"></ion-icon>
+      Modificar Presupuesto
+    </ion-button>
+
+  </form>
+</ion-content>

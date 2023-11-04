@@ -1,0 +1,52 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="tabs/budgets" icon="arrow-back"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Nuevo Presupuesto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form (ngSubmit)="newBudgetOne(newBudget)" #newBudgetForm="ngForm">
+    <ion-list [inset]="true">
+
+      <ion-item>
+        <ion-icon name="information-circle" slot="start"></ion-icon>
+        <ion-input label="ID:" type="number" name="id" [(ngModel)]="newBudget.id" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="pricetag" slot="start"></ion-icon>
+        <ion-input label="Nombre:" type="text"  name="name_product" [(ngModel)]="newBudget.name_product" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="cube" slot="start"></ion-icon>
+        <ion-input label="Cantidad:" type="number"  name="product_quantity" [(ngModel)]="newBudget.product_quantity" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="cash" slot="start"></ion-icon>
+        <ion-input label="Valor:" type="number"  name="product_value" [(ngModel)]="newBudget.product_value" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="barbell" slot="start"></ion-icon>
+        <ion-input label="Peso:" type="number"  name="product_weight" [(ngModel)]="newBudget.product_weight" required></ion-input>
+      </ion-item>
+
+    </ion-list>
+
+    <ion-button expand="full" class="ion-margin-horizontal" slot="primary" type="submit" [disabled]="!newBudgetForm.form.valid">
+      <ion-icon name="save-outline" slot="start"></ion-icon>
+      Crear Presupuesto
+    </ion-button>
+
+  </form>
+
+  <ion-note color="medium" class="ion-margin-horizontal">
+    Si deseas agregar un presupuesto, llena todos los campos.
+  </ion-note>
+  
+</ion-content>

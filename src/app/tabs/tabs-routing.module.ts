@@ -20,6 +20,18 @@ const routes: Routes = [
         loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
       },
       {
+        path: 'budgets',
+        loadChildren: () => import('../budgets/budgets.module').then(m => m.BudgetsPageModule)
+      },
+      {
+        path: 'newbudget',
+        loadChildren: () => import('../newbudget/newbudget.module').then(m => m.NewbudgetPageModule)
+      },
+      {
+        path: 'editbudget/:id',
+        loadChildren: () => import('../editbudget/editbudget.module').then(m => m.EditbudgetPageModule)
+      },
+      {
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full'
